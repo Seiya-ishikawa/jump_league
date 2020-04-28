@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_163705) do
+ActiveRecord::Schema.define(version: 2020_04_28_084118) do
 
   create_table "comics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -23,4 +23,13 @@ ActiveRecord::Schema.define(version: 2020_04_27_163705) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "winpoints", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "poin", null: false
+    t.bigint "comic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comic_id"], name: "index_winpoints_on_comic_id"
+  end
+
+  add_foreign_key "winpoints", "comics"
 end

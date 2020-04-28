@@ -1,0 +1,2 @@
+class Winpoint < ApplicationRecord
+end
