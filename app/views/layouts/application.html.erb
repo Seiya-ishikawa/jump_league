@@ -16,7 +16,7 @@
       </div>
       <div class = "header__devise">
         <% if user_signed_in? %>
-          <%= link_to "投票する",root_path,class:"header__devise--btn"%>
+          <%= link_to "投票する",new_winpoint_path,class:"header__devise--btn"%>
           <%= link_to "logout",destroy_user_session_path,class:"header__divise--btn"%>
         <% else %>
           <%= link_to "login",new_user_session_path,class:"header__devise--btn"%>
