@@ -1,0 +1,5 @@
+<h1>JumpLeague</h1>
+  <% @comics.each do |comic| %>
+    <%= render partial: "comics", locals: { comic: comic } %>
+  <% end %>
+  <%= render partial: "footer" %>
