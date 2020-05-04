@@ -1,0 +1,2 @@
+module WinpointsHelper
+end
