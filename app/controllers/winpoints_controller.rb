@@ -5,8 +5,8 @@ class WinpointsController < ApplicationController
     else
       @comics=Comic.order("RAND()").limit(2)
     end
-    # @winpoint = Winpoint.new
-    # @winpoint.matches.new
+    @winpoint = Winpoint.new
+    @winpoint.matches.new
   end
 
   def create
