@@ -1,12 +1,12 @@
 class WinpointsController < ApplicationController
   def new
-    if Winpoint.point.conut == 20
+    if Winpoint.count == 20
     @comics = Comic.order(match: "ASC").limit(2)
     else
-      @comics=Comic.RAND(2)
+      @comics=Comic.order("RAND()").limit(2)
     end
-    @winpoint = Winpoint.new
-    @winpoint.matches.new
+    # @winpoint = Winpoint.new
+    # @winpoint.matches.new
   end
 
   def create
