@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     get 'sign_out', to: "users/sessions#destroy" 
   end
   resources :comics, only: :index
-  resources :winpoints, only: :new
+  resources :winpoints, only: [:new,:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,5 +1,9 @@
 <div class="vote">
-  <% @comics.each do|comic|%>
-    <%=comic.title%>
+  <%= form_with model: @winpoint,local: true do|form|%>
+    <% @comics.each do|comic|%>
+      <%=comic.title%>
+      <%= form.radio_button :point, :'comic.title' %>
+      <%= form.hidden_field :quantity, value:1,name:"winpoint[matches_attributes][quantity]" %>
+    <%end%>
   <%end%>
 </div>
