@@ -6,6 +6,7 @@ class WinpointsController < ApplicationController
   end
 
   def create
+    binding.pry
     @winpoint = Winpoint.new(point_params)
     if @winpoint.save
     redirect_to root_path
@@ -25,6 +26,6 @@ class WinpointsController < ApplicationController
   end
 
   def point_params
-    params.require(:winpoint).permit(:point,:comic_id).merge(user_id: current_user.id)
+    params.require(:winpoint).permit(:win,matches_attributes:[:id])
   end
 end

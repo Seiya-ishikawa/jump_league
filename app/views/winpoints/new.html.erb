@@ -1,9 +1,10 @@
 <div class="vote">
   <%= form_with model: @winpoint,local: true do|form|%>
-    <% @comics.each do|comic|%>
+    <% @comics.each do |comic|%>
       <%=comic.title%>
-      <%= form.radio_button :point, :'comic.title' %>
-      <%= form.hidden_field :quantity, value:1,name:"winpoint[matches_attributes][quantity]" %>
+    <%= form.check_box :winpoint_id, {checked:"#{@winpoint.id}"} , name:"winpoint[matches_attributes][id]" %>
+    <%= form.radio_button :win, :"true" %>
     <%end%>
+    <%= form.submit class:"send_btn",value:"投票する"%>
   <%end%>
 </div>
